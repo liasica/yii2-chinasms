@@ -1,0 +1,15 @@
+{
+    "name": "liasica/yii2-chinasms",
+    "description": "Yii2短信-中国",
+    "type": "Yii2-component",
+    "require": {
+        "yiisoft/yii2": "^2.0"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "liasica",
+            "email": "magicrolan@qq.com"
+        }
+    ]
+}
