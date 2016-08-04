@@ -4,7 +4,7 @@
  * Email: magicrolan@qq.com
  * CreateTime: 16/8/4 下午12:57
  */
-namespace liasica\chinasms;
+namespace liasica\chinasms\base;
 
 use Yii;
 use yii\base\Component;
