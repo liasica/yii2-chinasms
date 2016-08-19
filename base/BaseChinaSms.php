@@ -306,7 +306,7 @@ abstract class BaseChinaSms extends Payload
      * @param        $phone
      * @return bool
      */
-    protected function smsSendRateLimit(string $type, $phone)
+    public function smsSendRateLimit(string $type, $phone)
     {
         $key   = $type . $phone;
         $cache = $this->getCache($key);
