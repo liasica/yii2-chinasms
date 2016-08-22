@@ -18,7 +18,7 @@
 
 安装
 ---
-`composer update "liasica\yii2-chinasms:dev-master"`
+`composer update "liasica/yii2-chinasms:dev-master"`
 
 使用方法
 ----
