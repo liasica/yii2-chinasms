@@ -8,13 +8,13 @@
 [6]:	https://packagist.org/packages/liasica/yii2-chinasms
 [7]:    https://packagist.org/packages/liasica/yii2-chinasms
 
-[image-1]:	https://poser.pugx.org/liasica/yii2-chinasms/v/stable
-[image-2]:	https://poser.pugx.org/liasica/yii2-chinasms/downloads
-[image-3]:	https://poser.pugx.org/liasica/yii2-chinasms/v/unstable
-[image-4]:	https://poser.pugx.org/liasica/yii2-chinasms/license
-[image-5]:	https://poser.pugx.org/liasica/yii2-chinasms/d/monthly
-[image-6]:	https://poser.pugx.org/liasica/yii2-chinasms/d/daily
-[image-7]:  https://poser.pugx.org/liasica/yii2-chinasms/composerlock
+[image-1]:	https://poser.pugx.org/liasica/yii2-chinasms/v/stable?format=flat-square
+[image-2]:	https://poser.pugx.org/liasica/yii2-chinasms/downloads?format=flat-square
+[image-3]:	https://poser.pugx.org/liasica/yii2-chinasms/v/unstable?format=flat-square
+[image-4]:	https://poser.pugx.org/liasica/yii2-chinasms/license?format=flat-square
+[image-5]:	https://poser.pugx.org/liasica/yii2-chinasms/d/monthly?format=flat-square
+[image-6]:	https://poser.pugx.org/liasica/yii2-chinasms/d/daily?format=flat-square
+[image-7]:  https://poser.pugx.org/liasica/yii2-chinasms/composerlock?format=flat-square
 
 安装
 ---
