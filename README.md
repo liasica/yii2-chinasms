@@ -16,6 +16,38 @@
 [image-6]:	https://poser.pugx.org/liasica/yii2-chinasms/d/daily
 [image-7]:  https://poser.pugx.org/liasica/yii2-chinasms/composerlock
 
+安装
+---
+`composer update "liasica\yii2-chinasms:dev-master"`
 
 使用方法
 ----
+
+## 华信
+
+- 配置
+```php
+'huaxin' => [
+    'class'       => 'liasica\chinasms\Huaxin',
+    'account'     => '账号',
+    'password'    => '发送密码',
+    'cachePrefix' => 'cache_chinasms_huaxin_',
+    'useJsonUrl'  => true,
+]
+```
+
+- 使用
+
+```php
+$huaxin = \Yii::$app->huaxin;
+$ret    = $huaxin->smsPostSend($sms_type, $phone, $code);
+$limit  = $huaxin->smsSendRateLimit($sms_type, $phone);
+var_dump($ret);
+var_dump($limit);
+```
+
+```php
+$huaxin = \Yii::$app->huaxin;
+$ret    = $huaxin->smsPostSend($sms_type, $phone, $code, true);
+var_dump($ret);
+```
