@@ -235,8 +235,7 @@ abstract class BaseChinaSms extends Payload
     {
         $options += [
             CURLOPT_POST       => true,
-            CURLOPT_POSTFIELDS => is_array($postOptions) ? json_encode($postOptions,
-                JSON_UNESCAPED_UNICODE) : $postOptions,
+            CURLOPT_POSTFIELDS => is_array($postOptions) ? json_encode($postOptions, JSON_UNESCAPED_UNICODE) : $postOptions,
         ];
         return $this->http($this->url, $options);
     }
@@ -246,9 +245,10 @@ abstract class BaseChinaSms extends Payload
      * @param string $type
      * @param        $phone
      * @param        $code
+     * @param bool   $delcode
      * @return bool
      */
-    public function validationSms(string $type, $phone, $code = null)
+    public function validationSms(string $type, $phone, $code = null, $delcode = true)
     {
         $key   = $type . $phone;
         $cache = $this->getCache($key);
@@ -261,7 +261,9 @@ abstract class BaseChinaSms extends Payload
                 if ($this->smsExpired($type, $phone)) {
                     // 判断认证码是否相等
                     if ($_code == $code) {
-                        $this->delCache($key);
+                        if ($delcode) {
+                            $this->delCache($key);
+                        }
                         return true;
                     } else {
                         return false;
