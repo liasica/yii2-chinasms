@@ -374,4 +374,25 @@ abstract class BaseChinaSms extends Payload
         // 发送完成后解析结果
         return $this->_parseResult($result, $postData);
     }
+
+    /**
+     * 获取通知数据
+     * @param $phone
+     * @param $msg
+     * @return mixed
+     */
+    abstract function _getMsgPostData($phone, $msg);
+
+    /**
+     * 发送通知
+     * @param string $phone
+     * @param string $msg
+     * @return bool
+     */
+    public function sendMsg(string $phone, string $msg)
+    {
+        $postData = $this->_getMsgPostData($phone, $msg);
+        $result   = $this->httpPost($postData);
+        return $this->_parseResult($result, $postData);
+    }
 }

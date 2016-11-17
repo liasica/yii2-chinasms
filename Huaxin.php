@@ -125,7 +125,18 @@ class Huaxin extends BaseChinaSms
             'password' => $this->password,
             'mobile'   => $phone,
             'content'  => (strpos($this->msgTpl, '#@code@#') !== false ? str_replace('#@code@#', $code,
-                    $this->msgTpl) : $code),
+                $this->msgTpl) : $code),
+            'action'   => 'send',
+        ];
+    }
+
+    function _getMsgPostData($phone, $msg)
+    {
+        return [
+            'account'  => $this->account,
+            'password' => $this->password,
+            'mobile'   => $phone,
+            'content'  => $msg,
             'action'   => 'send',
         ];
     }
