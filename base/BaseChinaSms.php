@@ -4,6 +4,7 @@
  * Email: magicrolan@qq.com
  * CreateTime: 16/8/4 下午12:57
  */
+
 namespace liasica\chinasms\base;
 
 use Yii;
@@ -66,6 +67,8 @@ abstract class BaseChinaSms extends Payload
      * @var null
      */
     public $tpl = null;
+
+    public $result;
 
     /**
      * 设置账号
@@ -367,12 +370,15 @@ abstract class BaseChinaSms extends Payload
         if ($checkValidSms && $this->validationSms($type, $phone)) {
             return false;
         }
-        $result = $this->httpPost($postData, $options);
-        $key    = $type . $phone;
-        // 设置缓存
-        $this->setCache($key, $code . ',' . time(), $this->cacheTime);
+        $this->result = $this->httpPost($postData, $options);
+        $key          = $type . $phone;
         // 发送完成后解析结果
-        return $this->_parseResult($result, $postData);
+        $ret = $this->_parseResult($this->result, $postData);
+        if ($ret) {
+            // 设置缓存
+            $this->setCache($key, $code . ',' . time(), $this->cacheTime);
+        }
+        return $ret;
     }
 
     /**
